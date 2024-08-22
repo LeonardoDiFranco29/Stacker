@@ -1911,7 +1911,7 @@ button = function(t, st){
 
 playButton = button('iniciar'),
 tutorialButton = button('tutorial'),
-retryButton = button('devuelta'),
+retryButton = button('otra vez'),
 colorsButton = button('reversa'),
 menuButton = button('atras'),
 
@@ -1923,11 +1923,11 @@ choice = function(fg, bg, t){
 		drawText(r, t, fg, (c.w - textWidth(t)) / 2, c.h / 2 - 25);
 	});
 },
-bwButton = choice('black', '#fff', 'black on white'),
-wbButton = choice('white', '#000', 'white on black'),
+bwButton = choice('black', '#fff', 'negro sobre blanco'),
+wbButton = choice('white', '#000', 'Blanco sobre negro'),
 
 gameover = cache(345, 55, function(c, r){
-	drawText(r, 'game over', 'white', 0, 0, 1, 1);
+	drawText(r, 'juego terminado', 'white', 0, 0, 1, 1);
 }),
 
 rarrow = cache(80, 80, function(c, r){
