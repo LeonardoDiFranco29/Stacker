@@ -2140,18 +2140,18 @@ function PlayScenario(skip){
 		if('lastScore' in G && G.highscore < 40){
 			this.schedule[3] = 'Veo que no lo hiciste muy bien la última vez.';
 			this.schedule[6] = 'Aquí está mi consejo';
-			this.schedule[9] = 'Intenta evitar la '+'caída'+'cajas';
-			this.schedule[12] = 'Then, build a wall with the b'+'oxes';
-			this.schedule[15] = 'And climb it to avoid the w'+'ater';
-			this.schedule[18] = 'Let\'s try it!';
-			this.schedule[21] = 'It\'s raining b'+'oxes!!!';
+			this.schedule[9] = 'Intenta evitar la '+' caída'+' cajas';
+			this.schedule[12] = 'Luego, construye un muro con las'+' cajas';
+			this.schedule[15] = 'Y súbelo para evitar el'+' agua';
+			this.schedule[18] = '¡Probémoslo!';
+			this.schedule[21] = 'Estan lloviendo'+'cajas!!!';
 
 			s = 30;
 
 			this.nextSpawn = 24;
 		}else{
-			this.schedule[t] = 'It\'s raining b'+'oxes today!';
-			this.schedule[t + 7] = 'Water is rising!';
+			this.schedule[t] = 'Estan lloviendo'+' cajas!!! hoy!';
+			this.schedule[t + 7] = '¡El agua está subiendo!';
 
 			this.nextSpawn = 6;
 
@@ -2166,8 +2166,8 @@ function PlayScenario(skip){
 		}
 	}
 
-	this.schedule[s + 10] = 'You\'re getting good at this!';
-	this.schedule[s + 13] = 'Like... really good!';
+	this.schedule[s + 10] = '¡Sos bueno en esto!';
+	this.schedule[s + 13] = '¡realmente bueno!';
 
 	this.t = 0;
 };
@@ -2190,7 +2190,7 @@ PlayScenario.prototype = {
 				this.nextSpawn = 3;
 
 				if(abs(b.x - wld.hero.x) < (wld.hero.w + b.w) / 2){
-					wld.hero.say('WATCH OUT!', 2);
+					wld.hero.say('¡CUIDADO!', 2);
 				}
 			}
 
@@ -2205,7 +2205,7 @@ PlayScenario.prototype = {
 					}
 				}
 				if(!higher){
-					wld.hero.say('I\'m on top of the wooooooorld!');
+					wld.hero.say('¡Estoy en la cima del mundooooo!');
 					this.topWorldTimer = 20;
 				}
 			}
@@ -2216,14 +2216,14 @@ PlayScenario.prototype = {
 				this.nextScoreIncrease = 1;
 
 				if(wld.score === G.highscore + 1 && G.highscore){
-					wld.hero.say('New record!');
+					wld.hero.say('¡Nuevo récord!');
 				}
 			}
 
 			if(this.waterDelay > 0){
 				this.waterDelay -= e;
 				if(this.waterDelay <= 0){
-					wld.hero.say('Water is rising!');
+					wld.hero.say('¡El agua está subiendo!');
 				}
 				wld.waterSpeed = 0;
 			}else{
@@ -2235,7 +2235,7 @@ PlayScenario.prototype = {
 
 			this.nextEvent -= e;
 			if(this.nextEvent <= 0){
-				var t = rp(['quake', 'flood', 'boxStorm', 'tilt']);
+				var t = rp(['terremoto', 'inundación', 'caja tormenta', 'inclinación']);
 				wld[t].call(wld);
 				this.nextEvent = 40;
 			}
@@ -2250,7 +2250,7 @@ function TutorialScenario(){
 	this.states = {
 		hello: {
 			init: function(){
-				wld.hero.say('Hello!');
+				wld.hero.say('Hola!');
 				wld.hero.controllable = false;
 			},
 			cycle: function(){
@@ -2261,7 +2261,7 @@ function TutorialScenario(){
 		},
 		name: {
 			init: function(){
-				wld.hero.say('My name is Didi');
+				wld.hero.say('Mi nombre es Leo');
 			},
 			cycle: function(){
 				if(wld.hero.sayT < 0){
@@ -2271,7 +2271,7 @@ function TutorialScenario(){
 		},
 		spawn: {
 			init: function(){
-				wld.hero.say('It\'s raining b'+'oxes today!');
+				wld.hero.say('Estan lloviendo'+' cajas!!! hoy!');
 				s.bx = wld.spawnBox(wld.pf.x - wld.pf.w / 2 + dims.w / 2, -100, dims);
 			},
 			cycle: function(){
@@ -2282,20 +2282,20 @@ function TutorialScenario(){
 		},
 		push: {
 			init: function(){
-				wld.hero.say('Try to push this one away!');
+				wld.hero.say('¡Intenta alejarlo!');
 				wld.hero.controllable = true;
 			},
 			cycle: function(){
 				if(wld.boxes.length === 2){
 					s.startState('pushed');
 				}else if(wld.hero.sayT < 0){
-					wld.hero.say('Use the arrow ' + (G.touch ? 'b'+'uttons' : 'keys') + ' to move');
+					wld.hero.say('usa la flecha ' + (G.touch ? 'b'+'otones' : 'teclas') + ' para moverte');
 				}
 			}
 		},
 		pushed: {
 			init: function(){
-				wld.hero.say('Nice!');
+				wld.hero.say('Bien!');
 				wld.hero.controllable = false;
 			},
 			cycle: function(){
@@ -2306,7 +2306,7 @@ function TutorialScenario(){
 		},
 		stacking: {
 			init: function(){
-				wld.hero.say('B'+'oxes can s'+'tack up');
+				wld.hero.say('C'+' ajas se pueden'+' apilar');
 
 				var b = wld.pf.x + wld.pf.w / 2 - 70;
 				if(wld.hero.x > P.w / 2){
@@ -2329,7 +2329,7 @@ function TutorialScenario(){
 		},
 		stack: {
 			init: function(){
-				wld.hero.say('Try to j'+'ump on them');
+				wld.hero.say('Intenta saltar'+'sobre ellos');
 				wld.hero.controllable = true;
 
 				for(var i = 0 ; i < s.boxes.length ; i++){
@@ -2340,13 +2340,13 @@ function TutorialScenario(){
 				if(wld.hero.liesOn === s.boxes[s.boxes.length - 1]){
 					s.startState('jumped');
 				}else if(wld.hero.sayT < 0){
-					wld.hero.say(G.touch ? 'Use the round b'+'utton to j'+'ump' : 'Use the up arrow to j'+'ump');
+					wld.hero.say(G.touch ? 'Usa el botón re'+'dondo para'+'saltar' : 'Usa la flecha hacia arriba para'+'salta');
 				}
 			}
 		},
 		jumped: {
 			init: function(){
-				wld.hero.say('Nice!');
+				wld.hero.say('Bien!');
 				wld.hero.controllable = false;
 			},
 			cycle: function(){
@@ -2357,7 +2357,7 @@ function TutorialScenario(){
 		},
 		explain: {
 			init: function(){
-				wld.hero.say('Try not to f'+'all in the w'+'ater!');
+				wld.hero.say('¡Intenta no caerte'+'al agua!');
 
 				for(var i = 0 ; i < s.boxes.length ; i++){
 					s.boxes[i].pushable = true;
@@ -2371,7 +2371,7 @@ function TutorialScenario(){
 		},
 		start: {
 			init: function(){
-				wld.hero.say('Let\'s play now!');
+				wld.hero.say('¡Vamos a jugar ahora!');
 				wld.hero.controllable = true;
 			},
 			cycle: function(){
