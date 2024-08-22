@@ -1927,7 +1927,7 @@ bwButton = choice('black', '#fff', 'negro sobre blanco'),
 wbButton = choice('white', '#000', 'Blanco sobre negro'),
 
 gameover = cache(345, 55, function(c, r){
-	drawText(r, 'juego terminado', 'white', 0, 0, 1, 1);
+	drawText(r, 'termino', 'white', 0, 0, 1, 1);
 }),
 
 rarrow = cache(80, 80, function(c, r){
@@ -2100,26 +2100,26 @@ function PlayScenario(skip){
 	wld.hero.controllable = true;
 
 	this.gimmicks = [
-		['I should have brought my swimsuit', 'Or my umbrella'],
-		['How do I shoot?'],
-		['It\'s raining men!', 'Alleluia it\'s raining men!'],
-		['What does the b'+'ox s'+'ay?'],
-		['Did the weather man predict this?'],
-		['Follow me @remvst'],
-		['This does not feel like Tetris at all'],
-		['I\'m siiinging in the raiiin'],
-		['I should have taken swimming lessons'],
-		['I have no mouth :( '],
-		['Dem graphics'],
+		['debería haber traído mi traje de baño', 'O mi paraguas'],
+		['¿Cómo disparo?'],
+		['¡Está lloviendo ', '¡Aleluya, está lloviendo'],
+		//['What does the b'+'ox s'+'ay?'],
+		['¿El meteorólogo predijo esto?'],
+		//['Follow me @remvst'],
+		['Esto no se parece en nada al Tetris.'],
+		//['I\'m siiinging in the raiiin'],
+		['debería haber tomado clases de natación'],
+		//['I have no mouth :( '],
+		//['Dem graphics'],
 		//['Hon hon hon'],
 		//['Let\'s build a fort'],
-		['I need a helmet', 'Safety first'],
-		['Did you notice I blink?'],
+		['Necesito un casco', 'La seguridad es lo primero'],
+		['¿Notaste que parpadeo?'],
 		//['Those co'+'lors'],
 		//['Didi was alone'],
 		//['Such col'+'ors', 'Much graphics', 'Very pretty', 'Wow'],
 		//['Winter is coming'],
-		['Like the game?', 'Tweet about it!']
+		//['Like the game?', 'Tweet about it!']
 	];
 
 	shuffle(this.gimmicks);
@@ -2128,9 +2128,9 @@ function PlayScenario(skip){
 
 	var t = 0;
 	if(!skip){
-		this.schedule[0] = 'Hello' + (G.lastScore !== undefined ? ' again' : '') + '!';
+		this.schedule[0] = 'Hola' + (G.lastScore !== undefined ? ' otra vez' : '') + '!';
 		if(G.highscore > 0 && G.lastScore === undefined){
-			this.schedule[0] = 'Hey, you came back!';
+			this.schedule[0] = '¡che, volviste!';
 		}
 		t += 3;
 	}
@@ -2138,9 +2138,9 @@ function PlayScenario(skip){
 	var s = 0;
 	if(!skip){
 		if('lastScore' in G && G.highscore < 40){
-			this.schedule[3] = 'I see you didn\'t do too well last time';
-			this.schedule[6] = 'Here is my advice';
-			this.schedule[9] = 'Try to avoid fal'+'ling b'+'oxes';
+			this.schedule[3] = 'Veo que no lo hiciste muy bien la última vez.';
+			this.schedule[6] = 'Aquí está mi consejo';
+			this.schedule[9] = 'Intenta evitar la '+'caída'+'cajas';
 			this.schedule[12] = 'Then, build a wall with the b'+'oxes';
 			this.schedule[15] = 'And climb it to avoid the w'+'ater';
 			this.schedule[18] = 'Let\'s try it!';
