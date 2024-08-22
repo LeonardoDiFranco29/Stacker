@@ -2140,17 +2140,17 @@ function PlayScenario(skip){
 		if('lastScore' in G && G.highscore < 40){
 			this.schedule[3] = 'Veo que no lo hiciste muy bien la última vez.';
 			this.schedule[6] = 'Aquí está mi consejo';
-			this.schedule[9] = 'Intenta evitar la '+' caída'+' cajas';
-			this.schedule[12] = 'Luego, construye un muro con las'+' cajas';
-			this.schedule[15] = 'Y súbelo para evitar el'+' agua';
+			this.schedule[9] = 'Intenta evitar la caída cajas';
+			this.schedule[12] = 'Luego, construye un muro con las cajas';
+			this.schedule[15] = 'Y súbelo para evitar el agua';
 			this.schedule[18] = '¡Probémoslo!';
-			this.schedule[21] = 'Estan lloviendo'+'cajas!!!';
+			this.schedule[21] = 'Estan lloviendo cajas!!!';
 
 			s = 30;
 
 			this.nextSpawn = 24;
 		}else{
-			this.schedule[t] = 'Estan lloviendo'+' cajas!!! hoy!';
+			this.schedule[t] = 'Estan lloviendo cajas!!! hoy!';
 			this.schedule[t + 7] = '¡El agua está subiendo!';
 
 			this.nextSpawn = 6;
@@ -2289,7 +2289,7 @@ function TutorialScenario(){
 				if(wld.boxes.length === 2){
 					s.startState('pushed');
 				}else if(wld.hero.sayT < 0){
-					wld.hero.say('usa la flecha ' + (G.touch ? 'b'+'otones' : 'teclas') + ' para moverte');
+					wld.hero.say('usa la flecha ' + (G.touch ? 'botones' : 'teclas') + ' para moverte');
 				}
 			}
 		},
@@ -2306,7 +2306,7 @@ function TutorialScenario(){
 		},
 		stacking: {
 			init: function(){
-				wld.hero.say('C'+' ajas se pueden'+' apilar');
+				wld.hero.say('Cajas se pueden pilar');
 
 				var b = wld.pf.x + wld.pf.w / 2 - 70;
 				if(wld.hero.x > P.w / 2){
@@ -2329,7 +2329,7 @@ function TutorialScenario(){
 		},
 		stack: {
 			init: function(){
-				wld.hero.say('Intenta saltar'+'sobre ellos');
+				wld.hero.say('Intenta saltar sobre ellos');
 				wld.hero.controllable = true;
 
 				for(var i = 0 ; i < s.boxes.length ; i++){
@@ -2340,7 +2340,7 @@ function TutorialScenario(){
 				if(wld.hero.liesOn === s.boxes[s.boxes.length - 1]){
 					s.startState('jumped');
 				}else if(wld.hero.sayT < 0){
-					wld.hero.say(G.touch ? 'Usa el botón re'+'dondo para'+'saltar' : 'Usa la flecha hacia arriba para'+'salta');
+					wld.hero.say(G.touch ? 'Usa el botón redondo para saltar' : 'Usa la flecha hacia arriba para salta');
 				}
 			}
 		},
@@ -2357,7 +2357,7 @@ function TutorialScenario(){
 		},
 		explain: {
 			init: function(){
-				wld.hero.say('¡Intenta no caerte'+'al agua!');
+				wld.hero.say('¡Intenta no caerte al agua!');
 
 				for(var i = 0 ; i < s.boxes.length ; i++){
 					s.boxes[i].pushable = true;
