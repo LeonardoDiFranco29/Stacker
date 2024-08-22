@@ -805,7 +805,7 @@ World.prototype = {
 			});
 		};
 
-		wld.hero.say('EARTHQUAKE!!!');
+		wld.hero.say('¡¡¡TERREMOTO!!!');
 
 		to(function(){
 			wld.shake = true;
@@ -815,21 +815,21 @@ World.prototype = {
 		}
 		to(function(){
 			wld.shake = false;
-			wld.hero.say('Phewww');
+			wld.hero.say('Uff');
 		}, t * 1000);
 	},
 	flood: function(){
-		wld.hero.say('FLOOD!!!');
+		wld.hero.say('¡¡¡INUNDACIÓN!!!');
 		to(function(){
 			wld.flooding = true;
 		}, 2000);
 		to(function(){
 			wld.flooding = false;
-			wld.hero.say('Flood\'s over');
+			wld.hero.say('Se termino la inundación');
 		}, 8000);
 	},
 	boxStorm: function(){
-		wld.hero.say('BOX STOOORM!!!');
+		wld.hero.say('TORMENTA DE CAJAS!!');
 
 		var xs = [];
 		for(var i = 0 ; i < 1 ; i++){
@@ -849,7 +849,7 @@ World.prototype = {
 		}
 
 		to(function(){
-			wld.hero.say('Storm is over');
+			wld.hero.say('Se Termino La Tormenta');
 		}, t * 1000 + 1000);
 	},
 	addParticle: function(p){
@@ -900,7 +900,7 @@ World.prototype = {
 		}
 	},
 	tilt: function(){
-		wld.hero.say('THE PLATFORM IS TILTING!!!');
+		wld.hero.say('LA PLATAFORMA SE INCLINA!!!');
 
 		var b = wld.balance(),
 			a = M.PI / 64;
@@ -1358,7 +1358,7 @@ Hero.prototype = xt(Box.prototype, {
 		});
 
 		if(this.y > wld.waterY){
-			this.say('Cold cold cooooold!!!');
+			this.say('Frío, frío, frío !!!');
 			if(this.y > wld.waterY + 50){
 				this.die();
 			}
@@ -1909,11 +1909,11 @@ button = function(t, st){
 	});
 },
 
-playButton = button('play'),
+playButton = button('iniciar'),
 tutorialButton = button('tutorial'),
-retryButton = button('try again'),
-colorsButton = button('reverse'),
-menuButton = button('back'),
+retryButton = button('devuelta'),
+colorsButton = button('reversa'),
+menuButton = button('atras'),
 
 choice = function(fg, bg, t){
 	return cache(P.w, P.h / 2, function(c, r){
