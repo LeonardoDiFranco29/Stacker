@@ -1911,7 +1911,7 @@ button = function(t, st){
 
 playButton = button('iniciar'),
 tutorialButton = button('tutorial'),
-retryButton = button('otra vez'),
+retryButton = button('otravez'),
 colorsButton = button('reversa'),
 menuButton = button('atras'),
 
