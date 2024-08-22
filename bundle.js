@@ -986,7 +986,7 @@ Home.prototype = xt(Menu.prototype, {
 		alpha(this.alpha);
 		di(title, (P.w - title.width) / 2, this.titleY);
 
-		var hsString = G.highscore ? ('high'+'score: ' + G.highscore) : '';
+		var hsString = G.highscore ? ('mejor'+'puntuación: ' + G.highscore) : '';
 		drawText(c, hsString, 'white', (P.w - textWidth(hsString, .5)) / 2, this.bestY, .5, 1);
 
 		alpha(1);
