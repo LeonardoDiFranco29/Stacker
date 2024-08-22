@@ -1893,7 +1893,7 @@ waterHalo = cache(100, 400, function(c, r){
 }, 'pattern', true),
 
 title = cache(475, 115, function(c, r){
-	drawText(r, 'it\'s raining', 'white', 0, 0, 1, 1);
+	drawText(r, ' llueven', 'white', 0, 0, 1, 1);
 	drawText(r, '...b'+'oxes?!', 'white', 0, 60, 1, 1);
 }),
 
